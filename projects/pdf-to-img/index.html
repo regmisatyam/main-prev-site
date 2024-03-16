@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> PDF to Image | SATYAM</title>
+    
+    <!-- Open Graph Meta Tags for Facebook -->
+    <meta property="og:title" content=" PDF to Image | SATYAM">
+    <meta property="og:description" content="Convert PDF to Image in seconds with PDF2Img by SATYAM. Simply upload PDF and generate .zip image files effortlessly.">
+    <meta property="og:image" content="https://satyamregmi.com.np/images/lion-logo.png">
+    <meta property="og:url" content="https://satyamregmi.com.np/">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content=" PDF to Image | SATYAM">
+    <meta name="twitter:description" content="Convert PDF to Image in seconds with PDF2Img by SATYAM. Simply upload PDF and generate .zip image files effortlessly.">
+    <meta name="twitter:image" content="https://satyamregmi.com.np/images/lion-logo.png">
+    <meta name="twitter:creator" content="@Satyam6Regmi">
+
+    <!-- Other Meta Tags for SEO -->
+    <meta name="description" content="Convert PDF to Image in seconds with PDF2Img by SATYAM. Simply upload PDF and generate .zip image files effortlessly.">
+    <meta name="keywords" content=" PDF to Image , converter, SATYAM, PDF generator, images">
+    <meta name="author" content="SATYAM REGMI">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="https://satyamregmi.com.np/projects/style.css">
+    <link rel="icon" type="image/x-icon" href="https://satyamregmi.com.np/images/lion-logo.png">
+</head>
+<style>
+
+    .canvas {
+        display: block;
+        margin: auto;
+        width: 70vw;
+        height: 60vh;
+        overflow: auto;
+    }
+
+    .btn {
+        padding: 10px;
+        background-color: rgb(12, 115, 199);
+        color: #fff;
+        border-radius: 5px;
+        border: 0px;
+        margin: 10px;
+    }
+
+    .border {
+        border: 1px dashed rgb(12, 115, 199);
+        padding: 10px;
+        border-radius: 10px;
+        margin: 10px;
+    }
+
+    #loader {
+        display: none;
+        width: 120px;
+        height: 22px;
+        border-radius: 20px;
+        color: rgb(12, 115, 199);
+        border: 2px solid;
+        position: relative;
+        margin-top: 10px;
+    }
+
+    #loader::before {
+        content: "";
+        position: absolute;
+        margin: 2px;
+        inset: 0 100% 0 0;
+        border-radius: inherit;
+        background: currentColor;
+        animation: l6 2s infinite;
+    }
+
+    @keyframes l6 {
+        100% {
+            inset: 0
+        }
+    }
+
+    
+</style>
+
+<body>
+    <nav class = "navbar bg-white">
+        <div class="container">
+            <div class = "navbar-content">
+                <div class = "brand-and-toggler">
+                    <a href = "/projects/" class = "navbar-brand">
+                        <span class = "navbar-brand-text">PDF to Img by <span>SATYAM</span>
+                    </a>
+                    <button type = "button" class = "navbar-toggler-btn" onclick="toggleSlider()">
+                        <div class = "bars">
+                            <div class = "bar"></div>
+                            <div class = "bar"></div>
+                            <div class = "bar"></div>
+                        </div>
+                    </button>
+                    <div class="slider" id="slider">
+                        <button type="button" class="close-btn" onclick="toggleSlider()">&times;</button>
+                        <a href="/">Home</a>
+                        <a href="https://satyamregmi.com.np/projects/" target="_blank">Projects</a>
+                        <a href="https://games.satyamregmi.com.np/" target="_blank">Games</a>
+                        <a href="https://blogs.satyamregmi.com.np/" target="_blank">Blogs</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <center>
+        <input type="file" class="border" id="fileInput" accept=".pdf" multiple><button id="downloadBtn" class="btn" disabled>Download Image</button>
+        <div id="loader"></div>
+        <div class="canvas">
+
+            <canvas id="pdfCanvas">
+
+            </canvas>
+        </div>
+
+        <button id="downloadBtn" class="btn" disabled>Download Images</button>
+    </center>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.6.0/jszip.min.js"></script>
+    <script src="script.js"></script>
+    <script src="https://satyamregmi.com.np/projects/nav-script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Android Layout</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        #textView3 {
+            width: 100%;
+            margin: 8px;
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        #horizontalScroll1 {
+            width: 100%;
+            margin: 8px;
+            overflow-x: auto;
+            white-space: nowrap;
+        }
+
+        #constraintLayout {
+            display: inline-flex;
+        }
+
+        .cardView {
+            width: fit-content;
+            height: fit-content;
+            margin: 10px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .cardContent {
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .imageView {
+            width: 200px;
+            height: 180px;
+            border-radius: 5px;
+        }
+
+        .title {
+            font-size: 22px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .excerpt {
+            font-size: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="textView3">Recent Operations:</div>
+
+    <div id="horizontalScroll1">
+        <div id="constraintLayout">
+
+            <div id="myPets1" class="cardView">
+                <div class="cardContent">
+                    <img src="https://img.freepik.com/free-photo/medium-shot-man-wearing-vr-glasses_23-2150394443.jpg?w=1800&t=st=1705331149~exp=1705331749~hmac=357fca600ab8989508b4bd0edb1820645c5b0a791afe93c41ad6057c621f9279" alt="Article Image" class="imageView">
+                    <div class="title">Web View</div>
+                    <div class="excerpt">Excerpt web View</div>
+                </div>
+            </div>
+
+            <div class="cardView" style="margin-left: 20px;">
+                <div class="cardContent">
+                    <img src="https://png.pngtree.com/png-vector/20220221/ourmid/pngtree-design-of-a-logo-icon-with-vibrant-colors-and-the-number-600-inspired-by-a-rainbow-vector-png-image_27719748.jpg" alt="Video Image" class="imageView">
+                    <div class="title">Web View 2</div>
+                    <div class="excerpt">This is Excerpt Web</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+
+</html>

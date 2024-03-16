@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SATYAM</title>
+  <link rel="icon" type="image/x-icon" href="https://satyamregmi.com.np/images/lion-logo.ico">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="mobile.css">
+  <script src="script.js"></script>
+ 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.0.2/tailwind.min.css">
+</head>
+
+<body>
+  <div class="sidenav headBar" id="mySidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="toggleNav()">×</a>
+    <a  href="" class="active">HOME</a>
+    <a href="#services">SERVICES</a>
+    <a href="projects/">PROJECTS</a>
+    <a href="https://satyamregmi.com.np/SATYAM_GAMES/">SATYAM GAMES
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+      stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" class="inline ml-1 h-4 w-4">
+      <path stroke-linecap="round" stroke-linejoin="round"
+        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+    </svg></a>
+    <a href="" target="_blank">BLOGS<svg xmlns="http://www.w3.org/2000/svg" fill="none"
+      stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" class="inline ml-1 h-4 w-4">
+      <path stroke-linecap="round" stroke-linejoin="round"
+        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+    </svg></a>
+    
+  </div>
+
+  <div class="headBar">
+    <header class="body-font ">
+      <div class="container mx-auto flex flex-wrap flex-col md:flex-row justify-between">
+    
+        <a class="flex title-font font-medium items-center text-gray-900 md:mb-0 justify-between">
+          <span class="menuBtn mx-5" onclick="toggleNav()">☰</span>
+          <div class="flex items-center right-marginSatyam">
+          <img src="images/lion-logo.png" alt="satyam_dev logo">
+          <span class="ml-3 text-xl font-family-app-title">SATYAM</span>
+        </div>
+        </a>
+        <div class="satyamNav items-center">
+        <nav class="md:ml-auto font-family-app-title flex flex-wrap items-center justify-center">
+          <a class="margin-left-right active" href="/">HOME</a>
+          <a class="margin-left-right hover:text-blue-900" href="#services">SERVICES</a>
+          <a class="margin-left-right hover:text-blue-900" href="projects/">PROJECTS</a>
+          <a class="margin-left-right hover:text-blue-900" href="https://satyamregmi.com.np/SATYAM_GAMES/">SATYAM GAMES
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+            stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" class="inline ml-1 h-4 w-4">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+          </svg></a>
+          <a class="margin-left-right hover:text-blue-900" href="https://blogs.satyamregmi.com.np/">BLOGS<svg xmlns="http://www.w3.org/2000/svg" fill="none"
+              stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" class="inline ml-1 h-4 w-4">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+            </svg></a>
+        </nav>
+      </div>
+
+      </div>
+    </header>
+  </div>
+  
+  <hr>
+  <div class="red-banner">
+  </div>
+
+  <div class="overlayPopup"></div>
+  <div class="hireMe">
+    <span class="crossPopup" onclick="closeModel()">&times;</span>
+    <form  action="https://formspree.io/f/maygzjrg" method="POST" name="hireMeForm" onsubmit="return validate()" id="hireMeform">
+      <div>
+        <label for="">Full Name*</label>
+        <input id="fullName" type="text" name="Full Name" >
+      </div>
+      <div>
+        <label for="">Email*</label>
+        <input id="senderEmail" type="email" name="Email" >
+      </div>
+      <div>
+        <label for="">Phone</label>
+        <input id="senderPhone" name="Phone" type="tel" >
+      </div>
+      <div>
+        <label for="">Hire For*:</label>
+        <input id="hireFor" type="text" name="Hire For" placeholder="Website/ App/ Game" >
+      </div>
+      <div>
+        <label for="">Time*:</label>
+        <input  id="timeP" type="text" placeholder="In 3days / 1week+ / 1months+" name="Time" >
+      </div>
+      <div>
+        <label for="">Any Queries?
+        </label>
+        <input  id="anyQ" type="text" placeholder="Ask your questions" name="Queries" >
+      </div>
+      <button class="submitBtn" type="submit" style="margin-right: 10px;"> Submit </button>
+      <button class="submitBtn" type="reset">Clear All</button>
+      
+    </form> 
+    <div class="errorMsg" id="errorMsg">
+
+    </div>
+  <!-- <script src="hireMe.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <script src="https://smtpjs.com/v3/smtp.js"></script> -->
+  </div>
+ 
+
+  <section class="text-white body-font">
+    <div class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
+      <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 md:mb-0">
+        <img class="object-cover object-center rounded" alt="satyam_logo" src="images/lion-logo.png">
+      </div>
+      <div class="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
+        <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-white">Satyam Regmi
+          <br class="hidden lg:inline-block">Android/ iOS/ Web Developer
+        </h1>
+        <p class="mb-8 leading-relaxed">Hi! Welcome on my personal website. I can create websites for you. Click on the button below.
+        </p>
+        <div class="flex justify-center">
+          <button class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg" onclick="showModel()">Make a Website</button>
+          <button class="ml-4 inline-flex text-white bg-gray-800 border-0 py-2 px-6 focus:outline-none hover:bg-gray-700 hover:text-white rounded text-lg">
+            <a href="mailto:satyamregmi6@gmail.com">Contact Me</a>
+           </button>
+         
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="text-white bg-img body-font">
+    <div class="container px-5 py-24 mx-auto">
+        <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-white">Links to my websites:</h1>
+      <div class="flex flex-wrap -m-4">
+
+        <div class="p-4 md:w-1/3 whileSecHover">
+          <div class="h-full border-2 border-gray-800 rounded-lg overflow-hidden">
+            <a href="https://satyamregmi.com.np/SATYAM_GAMES/" target="_blank"><img class="lg:h-48 md:h-36 w-full object-cover object-center" src="images/space1.jpeg" alt="blog"></a>
+            <div class="p-6">
+              <h2 class="tracking-widest text-xs title-font font-medium text-gray-500 mb-1">App and Games</h2>
+              <h1 class="title-font text-lg font-medium text-white mb-3">SATYAM GAMES</h1>
+              <p class="leading-relaxed mb-3">Official website of SATYAM GAMES. You can get pre release news and version of android apps. </p>
+              <div class="flex items-center flex-wrap ">
+                <a class="text-indigo-400 inline-flex items-center md:mb-2 lg:mb-0" href="https://satyamregmi.com.np/SATYAM_GAMES/" target="_blank">Learn More
+                  <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M5 12h14"></path>
+                    <path d="M12 5l7 7-7 7"></path>
+                  </svg>
+                </a>
+            
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-4 md:w-1/3 whileSecHover">
+          <div class="h-full border-2 border-gray-800 rounded-lg overflow-hidden">
+            <img class="lg:h-48 md:h-36 w-full object-cover object-center" src="images/bg-landscape.jpeg" alt="blog">
+            <div class="p-6">
+              <h2 class="tracking-widest text-xs title-font font-medium text-gray-500 mb-1">Website Templates</h2>
+              <h1 class="title-font text-lg font-medium text-white mb-3">Soon !</h1>
+              <p class="leading-relaxed mb-3">Comming soon with this website. Stay tuned</p>
+              <div class="flex items-center flex-wrap">
+                <a class="text-indigo-400 inline-flex items-center md:mb-2 lg:mb-0">Learn More
+                  <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M5 12h14"></path>
+                    <path d="M12 5l7 7-7 7"></path>
+                  </svg>
+                </a>
+            
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-4 md:w-1/3 whileSecHover">
+          <div class="h-full border-2 border-gray-800 rounded-lg overflow-hidden">
+            <a href="https://blogs.satyamregmi.com.np" target="_blank"><img class="lg:h-48 md:h-36 w-full object-cover object-center" src="images/bg-landscape11.jpeg" alt="blog"></a>
+            <div class="p-6">
+              <h2 class="tracking-widest text-xs title-font font-medium text-gray-500 mb-1">News and Blogs</h2>
+              <h1 class="title-font text-lg font-medium text-white mb-3">Satyam Blogs</h1>
+              <p class="leading-relaxed mb-3">Visit the official site for blogging of mine. Here you can find my articles on different topics.
+                 You can also get tech news and many more updates.</p>
+              <div class="flex items-center flex-wrap ">
+                <a class="text-indigo-400 inline-flex items-center md:mb-2 lg:mb-0" href="https://blogs.satyamregmi.com.np" target="_blank">Learn More
+                  <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M5 12h14"></path>
+                    <path d="M12 5l7 7-7 7"></path>
+                  </svg>
+                </a>
+            
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a name="MyProjects"></a>
+  </section>
+  <section class="text-gray-400 body-font">
+    <div class="container px-5 py-24 mx-auto">
+      <div class="flex flex-col text-center w-full mb-20">
+      <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-white">My Projects</h1>
+        <p class="lg:w-2/3 mx-auto leading-relaxed text-base">Click / Hover over Images</p>
+      </div>
+      <div class="flex flex-wrap -m-4">
+        <div class="lg:w-1/3 sm:w-1/2 p-4">
+          <div class="flex relative">
+            <img alt="gallery" class="div-border absolute inset-0 w-full h-full object-cover object-center" src="images/hangman_icon.png">
+            <div class="div-border px-8 py-10 relative z-10 w-full border-4 border-gray-800 bg-gray-900 opacity-0 hover:opacity-100">
+              <h2 class="tracking-widest text-sm title-font font-medium text-indigo-400 mb-1">Android Game</h2>
+              <h1 class="title-font text-lg font-medium text-white mb-3">Hangman: Word Guess</h1>
+              <p class="leading-relaxed">Join the hangman challenge by downloading app now.</p>
+              <br>
+              <a href="https://play.google.com/store/search?q=pub: Satyam Games" class="get_on_google_play" target="_blank">
+                <img src="images/googlr_play.webp" alt="Get it on google play">
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="lg:w-1/3 sm:w-1/2 p-4">
+          <div class="flex relative">
+            <img alt="gallery" class="div-border absolute inset-0 w-full h-full object-cover object-center" src="images/guess_by_img_png.png">
+            <div class="div-border px-8 py-10 relative z-10 w-full border-4 border-gray-800 bg-gray-900 opacity-0 hover:opacity-100">
+              <h2 class="tracking-widest text-sm title-font font-medium text-indigo-400 mb-1">Game</h2>
+              <h1 class="title-font text-lg font-medium text-white mb-3">Guess By Image</h1>
+              <p class="leading-relaxed">Challenge yourself with logos. Guess By Image is free to download.</p>
+              <br>
+              <a href="https://play.google.com/store/search?q=pub: Satyam Games" class="get_on_google_play" target="_blank">
+                <img src="images/googlr_play.webp" alt="Get it on google play">
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="lg:w-1/3 sm:w-1/2 p-4">
+          <div class="flex relative">
+            <img alt="gallery" class="div-border absolute inset-0 w-full h-full object-cover object-center" src="images/phone_call_logo.png">
+            <div class="div-border px-8 py-10 relative z-10 w-full border-4 border-gray-800 bg-gray-900 opacity-0 hover:opacity-100">
+              <h2 class="tracking-widest text-sm title-font font-medium text-indigo-400 mb-1">Application</h2>
+              <h1 class="title-font text-lg font-medium text-white mb-3">Phonebook</h1>
+              <p class="leading-relaxed">"Phonebook" is a mobile application that serves as a vital resource in times of emergency.
+              </p>
+              <br>
+              <a href="https://play.google.com/store/search?q=pub: Satyam Games" class="get_on_google_play" target="_blank">
+                <img src="images/googlr_play.webp" alt="Get it on google play">
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="lg:w-1/3 sm:w-1/2 p-4">
+          <div class="flex relative">
+            <img alt="gallery" class="div-border absolute inset-0 w-full h-full object-cover object-center" src="images/wordpress2.png">
+            <div class="div-border px-8 py-10 relative z-10 w-full border-4 border-gray-800 bg-gray-900 opacity-0 hover:opacity-100">
+              <h2 class="tracking-widest text-sm title-font font-medium text-indigo-400 mb-1">Website</h2>
+              <h1 class="title-font text-lg font-medium text-white mb-3">Wordpress Website</h1>
+              <p class="leading-relaxed">Templates of new responsive website.</p>
+              <br>
+              <a href="/" class="get_on_google_play" target="_blank">
+                <h2 class="tracking-widest text-sm title-font font-medium text-indigo-400 mb-1">VISIT</h2>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="lg:w-1/3 sm:w-1/2 p-4">
+          <div class="flex relative">
+            <img alt="gallery" class="div-border absolute inset-0 w-full h-full object-cover object-center" src="images/html.png">
+            <div class="div-border px-8 py-10 relative z-10 w-full border-4 border-gray-800 bg-gray-900 opacity-0 hover:opacity-100">
+              <h2 class="tracking-widest text-sm title-font font-medium text-indigo-400 mb-1">Website</h2>
+              <h1 class="title-font text-lg font-medium text-white mb-3">HTML/CSS/JS</h1>
+              <p class="leading-relaxed">Template of new responsive website made only using HTML, CSS and Javascript</p>
+              <br>
+              <a href="/" class="get_on_google_play" target="_blank">
+                <h2 class="tracking-widest text-sm title-font font-medium text-indigo-400 mb-1">VISIT</h2>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="lg:w-1/3 sm:w-1/2 p-4">
+          <div class="flex relative">
+            <img alt="gallery" class="div-border absolute inset-0 w-full h-full object-cover object-center" src="images/unityy.png">
+            <div class="div-border px-8 py-10 relative z-10 w-full border-4 border-gray-800 bg-gray-900 opacity-0 hover:opacity-100">
+              <h2 class="tracking-widest text-sm title-font font-medium text-indigo-400 mb-1">Game</h2>
+              <h1 class="title-font text-lg font-medium text-white mb-3">Unity</h1>
+              <p class="leading-relaxed">Game made using unity engine (Only Available for MacOs Platform).</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    </div>
+    <a name="services"></a>
+  
+
+  <section class="text-white-600 body-font">
+    <div class="container px-5 py-24 mx-auto">
+        <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-white">My Skills and Services: </h1>
+      <div class="flex flex-wrap -m-4">
+
+        <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
+          <a class="block relative h-48 rounded overflow-hidden">
+            <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="images/html_css.jpeg">
+          </a>
+          <div class="mt-4">
+            <h3 class="tewhite-500 text-xs tracking-widest title-font mb-1">Web Frontend</h3>
+            <h2 class="text-white-900 title-font text-lg font-medium">HTML/CSS</h2>
+          </div>
+        </div>
+        <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
+          <a class="block relative h-48 rounded overflow-hidden">
+            <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="images/php_mysql.png">
+          </a>
+          <div class="mt-4">
+            <h3 class="text-white-500 text-xs tracking-widest title-font mb-1">Web Backend</h3>
+            <h2 class="text-white-900 title-font text-lg font-medium">MySQL/PHP</h2>
+          </div>
+        </div>
+        <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
+          <a class="block relative h-48 rounded overflow-hidden">
+            <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="images/js.png">
+          </a>
+          <div class="mt-4">
+            <h3 class="text-white-500 text-xs tracking-widest title-font mb-1">Web Scripting</h3>
+            <h2 class="text-white-900 title-font text-lg font-medium">Javascript</h2>
+          </div>
+        </div>
+        <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
+          <a class="block relative h-48 rounded overflow-hidden">
+            <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="images/c_java.png">
+          </a>
+          <div class="mt-4">
+            <h3 class="text-white-500 text-xs tracking-widest title-font mb-1">Programming</h3>
+            <h2 class="text-white-900 title-font text-lg font-medium">Java / C#</h2>
+          </div>
+        </div>
+        <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
+          <a class="block relative h-48 rounded overflow-hidden">
+            <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="images/android_studio.jpeg">
+          </a>
+          <div class="mt-4">
+            <h3 class="text-white-500 text-xs tracking-widest title-font mb-1">Android Dev</h3>
+            <h2 class="text-white-900 title-font text-lg font-medium">Android Studio</h2>
+          </div>
+        </div>
+        <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
+          <a class="block relative h-48 rounded overflow-hidden">
+            <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="images/flutter.jpeg">
+          </a>
+          <div class="mt-4">
+            <h3 class="text-white-500 text-xs tracking-widest title-font mb-1">Frameworks</h3>
+            <h2 class="text-white-900 title-font text-lg font-medium">Flutter</h2>
+          </div>
+        </div>
+        <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
+          <a class="block relative h-48 rounded overflow-hidden">
+            <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="images/unityy.png">
+          </a>
+          <div class="mt-4">
+            <h3 class="text-white-500 text-xs tracking-widest title-font mb-1">Game Engine</h3>
+            <h2 class="text-white-900 title-font text-lg font-medium">Unity</h2>
+          </div>
+        </div>
+        <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
+          <a class="block relative h-48 rounded overflow-hidden">
+            <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="images/godot.png">
+          </a>
+          <div class="mt-4">
+            <h3 class="text-white-500 text-xs tracking-widest title-font mb-1">Game Engine</h3>
+            <h2 class="text-white-900 title-font text-lg font-medium">GODOT</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="bodyPart">
+  </div>
+</body>
+
+<footer class="bg-img body-font div-border-footer">
+  <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
+    <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900" href="/">
+      <img src="images/lion-logo.png" class="footer-img" alt="satyam">
+      <span class="ml-3 text-xl" style="color: #fff;">© SATYAM</span>
+    </a>
+    <p class="text-sm sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">Contact
+      —
+      <a href="https://twitter.com/Satyam6Regmi" class="ml-1" rel="noopener noreferrer"
+        target="_blank">@satyam</a>
+    </p>
+    <p class="text-sm sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">
+      <a href="https://satyamregmi.com.np/SATYAM_GAMES/privacy-policy/" class="ml-1" rel="noopener noreferrer" target="_blank">PRIVACY
+        POLICY</a>
+    </p>
+    <p class="text-sm sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">
+      <a href="https://satyamregmi.com.np/SATYAM_GAMES/terms/" class="ml-1" rel="noopener noreferrer" target="_blank">TERMS AND CONDITIONS</a>
+    </p>
+    <span class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
+      <a class="ml-3" href="https://facebook.com/regmi.satyam" target="_blank">
+        <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5"
+          viewBox="0 0 24 24">
+          <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+        </svg>
+      </a>
+      <a class="ml-3" href="https://x.com/Satyam6Regmi" target="_blank">
+        <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5"
+          viewBox="0 0 24 24">
+          <path
+            d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z">
+          </path>
+        </svg>
+      </a>
+      <a class="ml-3" href="https://instagram.com/regmisatyam" target="_blank">
+        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          class="w-5 h-5" viewBox="0 0 24 24">
+          <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+          <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
+        </svg>
+      </a>
+      <a class="ml-3" href="https://linkedin.com/in/satyam-regmi/" target="_blank">
+        <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0"
+          class="w-5 h-5" viewBox="0 0 24 24">
+          <path stroke="none" d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z">
+          </path>
+          <circle cx="4" cy="4" r="2" stroke="none"></circle>
+        </svg>
+      </a>
+    </span>
+  </div>
+</footer>
+
+</html>
